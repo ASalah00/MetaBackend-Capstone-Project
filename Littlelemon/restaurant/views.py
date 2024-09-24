@@ -44,5 +44,14 @@ class UserViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
 class BookingViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
     queryset = Booking.objects.all()  # Fetch all Booking objects
     serializer_class = bookSerializer  # Use the BookingSerializer
+
+
+
+@api_view()
+@permission_classes([IsAuthenticated])
+# @authentication_classes([TokenAuthentication])
+def msg(request):
+    return Response({"message":"This view is protected"})
