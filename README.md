@@ -1,4 +1,4 @@
-#url paths inside hte project:
+#url paths inside the project:
 
 /restaurant/booking/tables/
 
